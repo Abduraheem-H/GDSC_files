@@ -4,13 +4,12 @@ class Solution:
         leftptr=0
         rightptr=len(numbers)-1
         for i in range(len(numbers)):
-            if numbers[leftptr]+numbers[rightptr]==target:
-                return[leftptr+1, rightptr+1] 
-            elif numbers[leftptr]+numbers[rightptr]>target:
+            
+            if numbers[leftptr]+numbers[rightptr]>target:
                 rightptr-=1
             elif numbers[leftptr]+numbers[rightptr]<target:
                 leftptr+=1
-           
-                
+            
+        return[leftptr+1, rightptr+1]
         
         

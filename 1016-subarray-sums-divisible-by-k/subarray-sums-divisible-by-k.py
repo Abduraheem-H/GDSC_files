@@ -5,18 +5,14 @@ class Solution:
         hash_sum = {0: 1}  
         for num in nums:
             prefix_sum += num
-            mod = prefix_sum % k
+            remainder= prefix_sum % k
 
-        
-            if mod < 0:
-                mod += k
-
-            if mod in hash_sum:
-                count += hash_sum[mod]
-            if mod in hash_sum:
-                hash_sum[mod] += 1
+            if remainder in hash_sum:
+                count += hash_sum[remainder]
+            if remainder in hash_sum:
+                hash_sum[remainder] += 1
             else:
-                hash_sum[mod] = 1
+                hash_sum[remainder] = 1
 
         return count
 

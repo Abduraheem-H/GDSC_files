@@ -1,6 +1,3 @@
-
-
-
 class Solution:
     def applyOperations( self, nums: List[int]) -> List[int]:
         n=len(nums)
@@ -9,14 +6,7 @@ class Solution:
                 nums[i-1]*=2
                 nums[i]=0
         # print(nums)
-        orderd=[]
-        counter=0
-        for i in range(n):
-            if nums[i]!=0:
-                orderd.append(nums[i])
-            else: 
-                counter+=1
-        for i in range(n-counter,n):
-            orderd.append(0)
+        orderd=[num for num in nums if num!=0]
+        orderd.extend([0]*(n-len(orderd)))
 
         return orderd
